@@ -3,5 +3,5 @@ from typing import List, Dict
 
 
 class AbstractStarships(ABC):
-    def gt(self, page: int) -> List[Dict]:
+    def get(self, page: int) -> List[Dict]:
         ...

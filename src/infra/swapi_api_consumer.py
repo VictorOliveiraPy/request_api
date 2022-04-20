@@ -1,10 +1,11 @@
 import requests
 
 from config import API_HOST
+from data.interfaces.swapi_api_consumer import SwapiApiConsumerInterface
 from exceptions import HttpRequestError
 
 
-class SwapiApiConsumer:
+class SwapiApiConsumer(SwapiApiConsumerInterface):
     def __init__(self):
         self.api_host = API_HOST
 

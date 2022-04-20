@@ -1,17 +1,20 @@
+from typing import List, Dict
+
 import pytest
 
 from infra.swapi_api_consumer import SwapiApiConsumer
 
 
 class TestSwapiApiConsumer:
-    def test_should_return_a_starship_list_dictionary_when_status_code_is_200(self):
+    def test_should_return_a_starship_list_dictionary_when_status_code_is_200(self) -> List[Dict]:
         page: int = 1
 
         instance = SwapiApiConsumer()
         response = instance.get_starships(page=page)
+
         assert response.json()
 
-    def test_should_raise_error_for_status_different_than_200(self):
+    def test_should_raise_error_for_status_different_than_200(self) -> int:
         instance = SwapiApiConsumer()
         response = instance.get_starships(page=1)
 
